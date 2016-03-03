@@ -3,7 +3,4 @@ import {render} from 'react-dom'
 import Component from './components/Component'
 import './styles'
 
-render(
-    <Component />,
-    document.getElementById('app')
-)
+render(<Component />, document.getElementById('app'))
