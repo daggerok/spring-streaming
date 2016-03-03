@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default () => (
-    <div class="container-fluid">
-        Looking for admin?
-    </div>
+  <div class="container-fluid">
+    Looking for admin?
+  </div>
 )

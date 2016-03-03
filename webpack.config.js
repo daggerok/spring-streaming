@@ -3,29 +3,29 @@
 let
   devtool = 'cheap-inline-module-source-map',
   mainDir = `${__dirname}/src/main`,
-  path    = `${mainDir}/resources/public/`,
+  path = `${mainDir}/resources/public/`,
   exclude = /(node_modules|bower_components)/,
-  banner  = `
+  banner = `
 your multiline company banner is here...
 
 2016 (c) Maksim Kostromin
 `
 
 let
-  webpack       = require('webpack'),
-  definePlugin  = webpack.DefinePlugin({
+  webpack = require('webpack'),
+  definePlugin = webpack.DefinePlugin({
     __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
     __PROD__: JSON.stringify(JSON.parse(process.env.BUILD_PROD || 'false'))
   })
 
 /*
-// in the code:
-if (__DEV__) {
-  console.warn('some extra debug logging');
-}
-if (__PROD__) {
-  helpdesk.notify('send crash report');
-}
+  // in the code:
+  if (__DEV__) {
+    console.warn('some extra debug logging');
+  }
+  if (__PROD__) {
+    helpdesk.notify('send crash report');
+  }
 */
 
 module.exports = {
@@ -41,13 +41,13 @@ module.exports = {
     admin: `${mainDir}/www/admin/main`,
   },
   output: {
-      path,
-      filename: '[name].js',
-      // used to generate URLs to e.g. images
-      //publicPath: 'http://mycdn.com/'
+    path,
+    filename: '[name].js',
+    // used to generate URLs to e.g. images
+    //publicPath: 'http://mycdn.com/'
   },
   resolve: {
-      extensions: ['', '.json', '.js', '.jsx']
+    extensions: ['', '.json', '.js', '.jsx']
   },
   module: {
     loaders: [
@@ -60,8 +60,8 @@ module.exports = {
       {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10240&mimetype=application/octet-stream'},
       {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5120'},
       // inline base64 URLs for < 5k images, direct URLs for the rest
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=5120' }
-    ]
+      {test: /\.(png|jpg)$/, loader: 'url-loader?limit=5120'},
+    ],
   },
   // This will remove all modules in the vendors chunk from the app and admin chunks. (see condig.entry)
   plugins: [

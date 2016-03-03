@@ -1,0 +1,33 @@
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'spring-boot'
+    apply plugin: 'application'
+
+    mainClassName = 'com.daggerok.spring.streaming.SpringStreamingApplication'
+
+    //group = group
+    //jar { version = version }
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = sourceCompatibility
+
+    repositories { jcenter() }
+
+    dependencies {
+        compile 'org.springframework.boot:spring-boot-starter',
+                "org.projectlombok:lombok:${lombokVersion}"
+
+        testCompile 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    // gradle bootRun -Dserver.context-path=/app
+    bootRun { systemProperties = System.properties }
+
+    // gradle run -Dserver.context-path=/app
+    run { systemProperties = System.properties }
+
+    asciidoctorj {
+        version = version
+        noDefaultRepositories = true
+    }
+}

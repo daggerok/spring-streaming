@@ -1,0 +1,10 @@
+dependencies {
+    compile project(":admin"), project(":user"),
+            'org.springframework.boot:spring-boot-starter-mustache',
+            'org.springframework.boot:spring-boot-starter-websocket',
+            'org.springframework.boot:spring-boot-devtools'
+}
+
+test.dependsOn www
+
+task wrapper(type: Wrapper) { gradleVersion = gradleVersion }

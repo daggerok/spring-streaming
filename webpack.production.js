@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 
 let
-  config  = require('./webpack.config'),
-  webpack = require('webpack');
+  config = require('./webpack.config'),
+  webpack = require('webpack')
 
 config.devtool = null;
 config.plugins = [
@@ -12,12 +12,17 @@ config.plugins = [
   new webpack.optimize.UglifyJsPlugin({
     sourcemap: false,
     compress: {
-      warnings: false
+      warnings: false,
     },
     mangle: {
-      except: ['$super', '$', 'exports', 'require']
+      except: [
+        '$super',
+        '$',
+        'exports',
+        'require',
+      ]
     },
   }),
-];
+]
 
 module.exports = config;

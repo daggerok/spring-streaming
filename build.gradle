@@ -1,29 +1,16 @@
 buildscript {
-	repositories { jcenter() }
-	dependencies { classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion" }
+    repositories { jcenter() }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
 }
 
-apply plugin: 'java'
-apply plugin: 'spring-boot'
-
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = sourceCompatibility
-
-repositories { jcenter() }
-
-dependencies {
-	compile 'org.springframework.boot:spring-boot-starter-mustache',
-			'org.springframework.boot:spring-boot-starter-websocket',
-			'org.springframework.boot:spring-boot-devtools'
-
-	testCompile 'org.springframework.boot:spring-boot-starter-test'
+plugins {
+    id 'org.asciidoctor.convert' version '1.5.3'
 }
 
-task www(type: Exec) {
-	workingDir projectDir
-	commandLine 'npm', 'run', 'build', '-d'
-}
-
-test.dependsOn www
-
-task wrapper(type: Wrapper) { gradleVersion = gradleVersion }
+apply from: 'gradle/allprojects.gradle'
+apply from: 'gradle/npm.gradle'
+apply from: 'gradle/streaming.gradle'
+apply from: 'gradle/admin.gradle'
+apply from: 'gradle/user.gradle'
