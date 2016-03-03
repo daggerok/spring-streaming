@@ -4,7 +4,7 @@ before_script: nvm install 5
 script:
   - npm run build
   - gradle clean build
-# cache:
-#   directories:
-#     - $HOME/.gradle/
-#     - node_modules/
+cache:
+  directories:
+    - $HOME/.gradle/
+    - node_modules/
