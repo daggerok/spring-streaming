@@ -6,5 +6,3 @@ dependencies {
 }
 
 test.dependsOn www
-
-task wrapper(type: Wrapper) { gradleVersion = gradleVersion }

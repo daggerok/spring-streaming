@@ -30,4 +30,7 @@ allprojects {
         version = version
         noDefaultRepositories = true
     }
+
+
+    task wrapper(type: Wrapper) { gradleVersion = gradleVersion }
 }
