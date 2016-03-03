@@ -24,8 +24,20 @@ gradle www
 gradle bootRun
 ```
 
+outdated dependencies:
+
+```bash
+$ $ gradle versions
+...
+The following dependencies have later release versions:
+ - org.springframework.boot:spring-boot-gradle-plugin [1.3.2.RELEASE -> 1.3.3.RELEASE]
+
+```
+
 read more:
 
 - [webpack production optimizations (https://github.com/webpack/docs/wiki/code-splitting)]
 
 - [webpack plugins (https://github.com/webpack/docs/wiki/list-of-plugins)]
+
+- [gradle versions plugin (https://github.com/ben-manes/gradle-versions-plugin)]

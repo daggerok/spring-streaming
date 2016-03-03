@@ -2,7 +2,7 @@
 
 let
   devtool = 'cheap-inline-module-source-map',
-  mainDir = `${__dirname}/src/main`,
+  mainDir = `${__dirname}/../src/main`,
   path = `${mainDir}/resources/public/`,
   exclude = /(node_modules|bower_components)/
 
@@ -24,7 +24,7 @@ let
 */
 
 module.exports = {
-  context: __dirname,
+  context: `${__dirname}/..`,
   devtool,
   entry: {
     vendors: [

@@ -11,9 +11,9 @@
     "url": "https://github.com/winterbe/spring-kotlin-react-demo"
   },
   "scripts": {
-    "build": "npm i && webpack -p --config webpack.production.js",
-    "start": "npm i && webpack -w",
-    "test": "npm i && webpack"
+    "build": "npm i && webpack -p --config webpack/prod.js",
+    "start": "npm i && webpack --config webpack/dev.js -w",
+    "test": "npm i && webpack  --config webpack/dev.js"
   },
   "devDependencies": {
     "babel": "^6.5.2",

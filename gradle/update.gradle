@@ -1,0 +1,8 @@
+task outdated(type: Exec) {
+    workingDir projectDir
+    commandLine 'npm', 'outdated'
+}
+
+task versions {
+   dependsOn outdated, dependencyUpdates
+}

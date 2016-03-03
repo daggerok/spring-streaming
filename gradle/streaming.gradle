@@ -4,5 +4,3 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-websocket',
             'org.springframework.boot:spring-boot-devtools'
 }
-
-test.dependsOn www
