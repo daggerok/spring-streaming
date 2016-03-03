@@ -7,7 +7,7 @@ let
 your multiline company banner is here...
 
 2016 (c) Maksim Kostromin
-`
+`;
 
 config.devtool = null;
 config.plugins = [
@@ -29,6 +29,6 @@ config.plugins = [
     },
   }),
   new webpack.BannerPlugin(banner),
-]
+];
 
-module.exports = config
+module.exports = config;

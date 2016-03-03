@@ -9,7 +9,7 @@ let
   definePlugin = webpack.DefinePlugin({
     __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
     __PROD__: JSON.stringify(JSON.parse(process.env.BUILD_PROD || 'false'))
-  })
+  });
 
 /*
   // in the code:
@@ -65,4 +65,4 @@ module.exports = {
       // children: true,
     }),
   ],
-}
+};
