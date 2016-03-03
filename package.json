@@ -1,7 +1,7 @@
 {
   "name": "spring-streaming",
   "version": "1.0.0",
-  "description": "Spring-Boot React",
+  "description": "SPA boilerplate on Spring Boot with WebSockets and React",
   "private": true,
   "main": "src/main/www/main.js",
   "author": "Maksim Kostromin",

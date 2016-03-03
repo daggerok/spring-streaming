@@ -1,7 +1,7 @@
 spring-streaming [![build](https://travis-ci.org/daggerok/spring-streaming.svg?branch=master)](https://travis-ci.org/daggerok/spring-streaming) 
 ================
 
-boilerplate of SPA on Spring Boot, WebSockets and React (in progress...)
+SPA boilerplate on Spring Boot with WebSockets and React (in progress...)
 
 full stack:
 
