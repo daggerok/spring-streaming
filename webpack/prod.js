@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 let
   config  = require('./dev'),
@@ -31,4 +31,4 @@ config.plugins = [
   new webpack.BannerPlugin(banner),
 ]
 
-module.exports = config;
+module.exports = config

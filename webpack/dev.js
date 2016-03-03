@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 let
   devtool = 'cheap-inline-module-source-map',
