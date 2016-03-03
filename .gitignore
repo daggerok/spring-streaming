@@ -1,0 +1,8 @@
+*.ipr
+*.iws
+.gradle/
+.idea/
+out/
+build/
+node_modules/
+src/main/resources/static/

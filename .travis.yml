@@ -1,0 +1,4 @@
+language: java
+jdk: oraclejdk8
+before_script: nvm install 5
+script: gradle clean build
