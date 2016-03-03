@@ -12,7 +12,7 @@ targetCompatibility = sourceCompatibility
 repositories { jcenter() }
 
 dependencies {
-	compile 'org.springframework.boot:spring-boot-starter-web',
+	compile 'org.springframework.boot:spring-boot-starter-mustache',
 			'org.springframework.boot:spring-boot-starter-websocket',
 			'org.springframework.boot:spring-boot-devtools'
 

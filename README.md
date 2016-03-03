@@ -23,3 +23,9 @@ npm required:
 gradle www
 gradle bootRun
 ```
+
+read more:
+
+- [webpack production optimizations (https://github.com/webpack/docs/wiki/code-splitting)]
+
+- [webpack plugins (https://github.com/webpack/docs/wiki/list-of-plugins)]
