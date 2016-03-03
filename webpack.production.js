@@ -5,6 +5,7 @@ let
   webpack = require('webpack'),
   banner  = `
 your multiline company banner is here...
+
 2016 (c) Maksim Kostromin
 `
 
