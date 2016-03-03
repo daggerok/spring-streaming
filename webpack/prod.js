@@ -1,7 +1,7 @@
 'use strict';
 
 let
-  config  = require('./dev'),
+  config  = require('./dev.js'),
   webpack = require('webpack'),
   banner  = `
 your multiline company banner is here...
