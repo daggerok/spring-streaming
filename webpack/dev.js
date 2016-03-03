@@ -65,4 +65,4 @@ module.exports = {
       // children: true,
     }),
   ],
-};
+}
