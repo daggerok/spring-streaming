@@ -2,8 +2,7 @@
 
 const
     config  = require('./webpack.config'),
-    webpack = require('webpack'),
-    debug   = true;
+    webpack = require('webpack');
 
 config.devtool = null;
 config.plugins = [
