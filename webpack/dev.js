@@ -4,9 +4,7 @@ let
   devtool = 'cheap-inline-module-source-map',
   mainDir = `${__dirname}/../src/main`,
   path = `${mainDir}/resources/public/`,
-  exclude = /(node_modules|bower_components)/
-
-let
+  exclude = /(node_modules|bower_components)/,
   webpack = require('webpack'),
   definePlugin = webpack.DefinePlugin({
     __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
