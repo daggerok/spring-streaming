@@ -4,12 +4,7 @@ let
   devtool = 'cheap-inline-module-source-map',
   mainDir = `${__dirname}/src/main`,
   path = `${mainDir}/resources/public/`,
-  exclude = /(node_modules|bower_components)/,
-  banner = `
-your multiline company banner is here...
-
-2016 (c) Maksim Kostromin
-`
+  exclude = /(node_modules|bower_components)/
 
 let
   webpack = require('webpack'),
@@ -71,6 +66,5 @@ module.exports = {
       // with this, you will link only one bundle on a page (app.js or admin.js), within vendors.js inside
       // children: true,
     }),
-    new webpack.BannerPlugin(banner),
   ],
 }
