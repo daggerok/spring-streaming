@@ -6,3 +6,4 @@ cache:
   directories:
     - $HOME/.gradle/
     - node_modules/
+    - .gradle/
