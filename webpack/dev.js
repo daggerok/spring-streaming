@@ -1,6 +1,6 @@
 'use strict';
 
-let
+const
   devtool = 'cheap-inline-module-source-map',
   mainDir = `${__dirname}/../src/main`,
   path = `${mainDir}/resources/public/`,

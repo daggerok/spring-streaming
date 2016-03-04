@@ -1,6 +1,6 @@
 'use strict';
 
-let
+const
   webpack = require('webpack'),
   config  = require('./dev.js'),
   banner  = `
