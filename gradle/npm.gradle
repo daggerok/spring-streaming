@@ -1,4 +1,4 @@
 task www(type: Exec) {
     workingDir projectDir
-    commandLine 'npm', 'run', 'build', '-d'
+    commandLine 'npm', 'run', 'build'
 }

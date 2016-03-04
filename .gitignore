@@ -1,7 +1,7 @@
 *.ipr
 *.iws
 .gradle/
-gradle/wrapper
+gradle/wrapper/
 .idea/
 out/
 build/
