@@ -1,4 +1,4 @@
 task www(type: Exec) {
     workingDir './'
-    commandLine 'npm', 'run', 'build'
+    commandLine 'npm', '--harmony', 'run', 'build'
 }
