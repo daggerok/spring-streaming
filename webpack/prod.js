@@ -1,15 +1,15 @@
 'use strict';
 
-const
+let
   webpack = require('webpack'),
-  config  = require('./dev.js'),
+  config  = require('./dev'),
   banner  = `
-your multiline company banner is here...
+your multi line company banner is here...
 
 2016 (c) Maksim Kostromin
-`;
+`
 
-config.devtool = null;
+config.devtool = null
 config.plugins = [
   ...config.plugins,
   new webpack.optimize.DedupePlugin(),
@@ -17,18 +17,18 @@ config.plugins = [
   new webpack.optimize.UglifyJsPlugin({
     sourcemap: false,
     compress: {
-      warnings: false,
+      warnings: false
     },
     mangle: {
       except: [
         '$super',
         '$',
         'exports',
-        'require',
+        'require'
       ]
-    },
+    }
   }),
   new webpack.BannerPlugin(banner),
-];
+]
 
-module.exports = config;
+module.exports = config

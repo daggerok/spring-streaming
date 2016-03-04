@@ -10,12 +10,11 @@ plugins {
     id 'org.asciidoctor.convert' version '1.5.3'
 }
 
-apply plugin: 'com.github.ben-manes.versions'
-
-apply from: 'gradle/allprojects.gradle'
-apply from: 'gradle/npm.gradle'
-apply from: 'gradle/streaming.gradle'
-apply from: 'gradle/admin.gradle'
-apply from: 'gradle/user.gradle'
-apply from: 'gradle/update.gradle'
-apply from: 'gradle/tree.gradle'
+apply plugin:   'com.github.ben-manes.versions'
+apply from:     'gradle/allprojects.gradle'
+apply from:     'gradle/npm.gradle'
+apply from:     'gradle/streaming.gradle'
+apply from:     'gradle/admin.gradle'
+apply from:     'gradle/user.gradle'
+apply from:     'gradle/update.gradle'
+apply from:     'gradle/tree.gradle'

@@ -1,4 +1,4 @@
-spring-streaming [![build](https://travis-ci.org/daggerok/spring-streaming.svg?branch=master)](https://travis-ci.org/daggerok/spring-streaming) 
+spring-streaming [![build] (https://travis-ci.org/daggerok/spring-streaming.svg?branch=master)] (https://travis-ci.org/daggerok/spring-streaming) 
 ================
 
 SPA boilerplate on Spring Boot with WebSockets and React (in progress...)
@@ -19,8 +19,18 @@ full stack:
 
 npm required:
 
+production mode:
+
 ```bash
-gradle www
+npm run build
+gradle clean build
+java -jar build/libs/*.jar
+```
+
+development mode:
+
+```bash
+npm start
 gradle bootRun
 ```
 
@@ -36,8 +46,8 @@ The following dependencies have later release versions:
 
 read more:
 
-- [webpack production optimizations (https://github.com/webpack/docs/wiki/code-splitting)]
+- [webpack production optimizations ] (https://github.com/webpack/docs/wiki/code-splitting)
 
-- [webpack plugins (https://github.com/webpack/docs/wiki/list-of-plugins)]
+- [webpack plugins ] (https://github.com/webpack/docs/wiki/list-of-plugins)
 
-- [gradle versions plugin (https://github.com/ben-manes/gradle-versions-plugin)]
+- [gradle versions plugin] (https://github.com/ben-manes/gradle-versions-plugin)
