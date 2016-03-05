@@ -2,6 +2,7 @@ language: java
 jdk: oraclejdk8
 before_script: nvm install 5
 script:
+  - gradle www
   - npm run build
   - gradle clean build
 cache:
