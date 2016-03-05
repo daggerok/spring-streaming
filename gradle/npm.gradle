@@ -1,4 +1,18 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+import java.nio.file.*
+
 task www(type: Exec) {
+    def node = 'build'
+    def frontendDir = "${project.projectDir}/npm"
+    def isWindows = Os.isFamily(Os.FAMILY_WINDOWS)
+    def script = "$frontendDir/${node}." + (isWindows ? "cmd" : "bash")
+
+    if (Files.notExists(Paths.get(script))) throw new GradleException("file $script wasn't found.")
+
+    workingDir frontendDir
+    commandLine isWindows ? ['cmd', '/c', script] : ['bash', '-x', script]
+    /*
     workingDir './'
     commandLine 'npm', 'run', 'build'
+    */
 }

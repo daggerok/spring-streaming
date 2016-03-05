@@ -123,8 +123,6 @@
     <orderEntry type="library" name="Gradle: it.sauronsoftware.cron4j:cron4j:2.2.5" level="project" />
     <orderEntry type="library" name="Gradle: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" name="Gradle: net.sf.jpam:jpam:1.1" level="project" />
-    <orderEntry type="library" name="Node.js v5.7.0 Core Modules" level="application" />
-    <orderEntry type="library" name="spring-streaming node_modules" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">
