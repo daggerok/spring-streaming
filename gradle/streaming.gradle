@@ -1,6 +1,6 @@
 dependencies {
     compile project(":admin"), project(":user"),
-            'org.springframework.boot:spring-boot-starter-mustache',
+//            'org.springframework.boot:spring-boot-starter-mustache',
             'org.springframework.boot:spring-boot-starter-websocket',
             'org.springframework.boot:spring-boot-devtools'
 }
