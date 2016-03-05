@@ -1,5 +1,4 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router'
+import React from 'react'
 
 export default () => (
   <div class="container-fluid">
@@ -7,6 +6,8 @@ export default () => (
   </div>
 )
 /*
+import React, {Component} from 'react'
+
 export default class Index extends Component {
   render() {
     return (
