@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-npm run build -d
+npm update -D #-d

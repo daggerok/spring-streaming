@@ -36,12 +36,14 @@ gradle bootRun
 
 outdated dependencies:
 
-```bash
-$ $ gradle versions
+```shell
+gradle dependencyUpdates
 ...
 The following dependencies have later release versions:
  - org.springframework.boot:spring-boot-gradle-plugin [1.3.2.RELEASE -> 1.3.3.RELEASE]
 
+npm outdated
+npm update -D
 ```
 
 read more:

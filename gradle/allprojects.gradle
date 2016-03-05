@@ -5,9 +5,6 @@ allprojects {
 
     mainClassName = 'com.daggerok.spring.streaming.SpringStreamingApplication'
 
-    //group = group
-    //jar { version = version }
-
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = sourceCompatibility
 
@@ -25,12 +22,6 @@ allprojects {
 
     // gradle run -Dserver.context-path=/app
     run { systemProperties = System.properties }
-
-    asciidoctorj {
-        version = version
-        noDefaultRepositories = true
-    }
-
 
     task wrapper(type: Wrapper) { gradleVersion = gradleVersion }
 }

@@ -1,8 +1,9 @@
 'use strict';
 
 let
+  context = `${__dirname}/../..`,
   devtool = 'cheap-inline-module-source-map',
-  mainDir = `${__dirname}/../src/main`,
+  mainDir = `${context}/src/main`,
   path = `${mainDir}/resources/public/`,
   exclude = /(node_modules|bower_components)/,
   webpack = require('webpack'),
@@ -22,7 +23,7 @@ let
 */
 
 module.exports = {
-  context: `${__dirname}/..`,
+  context,
   devtool,
   entry: {
     vendors: [
