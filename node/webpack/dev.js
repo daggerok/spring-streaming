@@ -4,7 +4,6 @@ let
   context = `${__dirname}/../..`,
   devtool = 'cheap-inline-module-source-map',
   mainDir = `${context}/src/main`,
-  path = `${mainDir}/resources/public/`,
   exclude = /(node_modules|bower_components)/,
   webpack = require('webpack'),
   definePlugin = webpack.DefinePlugin({
@@ -35,7 +34,7 @@ module.exports = {
     admin: `${mainDir}/www/admin/main`
   },
   output: {
-    path,
+    path: `${mainDir}/resources/public/`,
     filename: '[name].js'
     // used to generate URLs to e.g. images
     //publicPath: 'http://mycdn.com/'
