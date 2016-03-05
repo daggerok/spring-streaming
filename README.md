@@ -17,22 +17,36 @@ full stack:
 
 - babel ES6, React, JSX
 
-npm required:
+- live reload (spring-boot-devtools)
+
+npm is required
 
 production mode:
 
-```bash
-npm run build
+```shell
+gradle npm # or npm run build
 gradle clean build
 java -jar build/libs/*.jar
 ```
 
 development mode:
 
-```bash
+```shell
 npm start
 gradle bootRun
 ```
+
+open page, turn on livereload browser extension, in idea change code and press alt+command+y, command+f9
+this will rebuild your java/javascript sources and trigger spring-boot-devtools restart/reload handler
+
+testing
+```shell
+curl -iv localhost:8080/test/sse-interval # or open these URLs in the browser
+curl -iv localhost:8080/test/sse-interval-with-status
+curl -iv http://localhost:8080/test/streaming-response-body
+```
+
+### in addition
 
 outdated dependencies:
 
@@ -43,7 +57,7 @@ The following dependencies have later release versions:
  - org.springframework.boot:spring-boot-gradle-plugin [1.3.2.RELEASE -> 1.3.3.RELEASE]
 
 npm outdated
-npm update -D
+npm update -D # or gradle npm -Ptask=update
 ```
 
 read more:

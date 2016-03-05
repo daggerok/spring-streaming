@@ -13,7 +13,7 @@
   "scripts": {
     "build": "npm i && webpack --config node/webpack/prod.js -p ",
     "start": "npm i && webpack --config node/webpack/dev.js -w",
-    "test": "npm i && webpack  --config node/webpack/dev.js"
+    "test": " npm i && webpack --config node/webpack/dev.js"
   },
   "devDependencies": {
     "babel": "^6.5.2",

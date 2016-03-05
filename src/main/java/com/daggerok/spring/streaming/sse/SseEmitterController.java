@@ -19,6 +19,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Controller
+@RequestMapping("/test")
 public class SseEmitterController {
     private static Logger log = LoggerFactory.getLogger(SseEmitterController.class);
 
