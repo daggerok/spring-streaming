@@ -1,37 +1,12 @@
 {
   "name": "spring-streaming",
-  "description": "SPA boilerplate on Spring Boot with WebSockets and React",
-  "main": "src/main/www/main.js",
-  "authors": [
-    "Maksim Kostromin"
-  ],
+  "description": "SockJS",
   "license": "ISC",
-  "keywords": [
-    "webpack",
-    "babel",
-    "es6",
-    "jsx",
-    "react",
-    "react-router",
-    "react-router-active-component",
-    "bootstrap",
-    "jquery"
-  ],
-  "homepage": "https://github.com/daggerok/spring-streaming",
-  "moduleType": [
-    "es6",
-    "node"
-  ],
   "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
   "dependencies": {
-    "sockjs": "^0.3.4",
+    "sockjs": "^0.3.4"
+  },
+  "disabled": {
     "stomp": "stomp-websocket#~2.3.4"
   }
 }

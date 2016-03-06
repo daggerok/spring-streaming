@@ -16,7 +16,7 @@
     "start": "npm i && webpack --config npm/webpack/dev.js -w",
     "test": " npm i && webpack --config npm/webpack/dev.js"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.6.5",
     "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.1.2",
@@ -37,6 +37,7 @@
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0",
     "react-router-active-component": "^4.0.0-rc.0",
+    "stompjs": "^2.3.3",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
@@ -55,13 +56,12 @@
     ]
   },
   "config": {
-    "bower_directory": "src/main/www/bower"
+    "bower_directory": "src/main/www/sockjs"
   },
   "bugs": {
     "url": "https://github.com/dageerok/spring-streaming/issues"
   },
   "homepage": "https://github.com/dageerok/spring-streaming#readme",
-  "dependencies": {},
   "keywords": [
     "webpack",
     "babel",

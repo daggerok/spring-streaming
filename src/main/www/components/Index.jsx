@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import TicTacToe from './Index/TicTacToe'
-import {SockJS, Stomp} from './Bower'
+import SockJS from '../sockjs'
+import Stomp from 'stompjs/lib/stomp'
 
 export default class Index extends Component {
   render() {
