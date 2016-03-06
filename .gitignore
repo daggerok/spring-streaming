@@ -6,5 +6,5 @@ gradle/wrapper/
 out/
 build/
 node_modules/
-src/main/www/bower/
+src/main/www/ws/sockjs/
 src/main/resources/public/

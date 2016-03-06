@@ -55,7 +55,7 @@
     ]
   },
   "config": {
-    "bower_directory": "src/main/www/sockjs"
+    "bower_directory": "src/main/www/ws"
   },
   "bugs": {
     "url": "https://github.com/dageerok/spring-streaming/issues"
