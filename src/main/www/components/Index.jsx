@@ -12,32 +12,42 @@ export default class Index extends Component {
         route: '/topic',
         callback: () => console.log('topic cb')
       },
-      isSubscribed: false,
-      btnLabel: 'subscribe'
+      isSubscribed: false
     }
 
+    this.toggle = this.toggle.bind(this)
     this.subscribe = this.subscribe.bind(this)
+    this.disconnect = this.disconnect.bind(this)
+  }
+
+  toggle() {
+    if (this.state.isSubscribed) {
+      this.disconnect()
+    } else {
+      this.subscribe()
+    }
+
+    this.setState({ isSubscribed: !this.state.isSubscribed })
+    window.stompClient = this.state.ws.stompClient
   }
 
   subscribe() {
     this.state.ws.subscribe(this.state.config)
-    
-    this.setState({ isSubscribed: !this.state.isSubscribed })
+  }
 
-    console.log(this.state.ws)
-    console.log('ws.socket', this.state.ws.socket)
-    console.log('ws.stompClient', this.state.ws.stompClient)
-    console.log('ws.endpoint', this.state.ws.subsc)
+  disconnect() {
+    this.state.ws.disconnect()
   }
 
   render() {
     return (
       <div class="container-fluid">
         <p>some tic-tac and sse-interval esting</p>
-        <button onClick={this.subscribe} 
-                disabled={this.state.isSubscribed? 'disabled' : ''} 
+        <button onClick={this.toggle} 
                 type="button" 
-                class="btn btn-default">{this.state.btnLabel}</button>
+                class="btn btn-default">
+          {this.state.isSubscribed? 'disconnect' : 'connect and subscribe'}
+        </button>
         <TicTacToe />
       </div>
     )

@@ -16,7 +16,12 @@ export default class WS {
   }
 
   disconnect(callback) {
-    this.stompClient.disconnect(() => console.log('see ya!'))
+    this.stompClient.disconnect(() => {
+      if (callback) {
+        callback()
+      }
+      console.log('see ya!')
+    })
   }
 
   subscribeAll(configs) {
@@ -27,22 +32,23 @@ export default class WS {
     this.connect(frame => {  
       let subscription = this.stompClient.subscribe(config.route, config.callback)
       console.log(`subscribed new config: ${JSON.stringify(subscription)}`)
-      this.subscriptions.add(subscription.id)
+      this.subscriptions.add(subscription)
       return subscription.id
     })
   }
 
   unsubscribe(id) {
-    if (this.subscriptions.has(id)) {
-      this.stompClient.unsubscribe(id)
-      this.subscriptions.delete(id)
-    } else {
-      console.log(`subscription with ${id} wasn't found.`)
-    }
+    this.subscriptions.forEach(subscription => {
+      if (subscription.id == id) {
+        subscription.unsubscribe()
+        this.subscriptions.delete(subscription)
+      }
+    })
   }
 
   unsubscribeAll() {
-    this.subscriptions.forEach(subscription => this.unsubscribe(subscription.id))
+    this.subscriptions.forEach(subscription => subscription.unsubscribe())
+    this.subscriptions.clear()
   }
 
   set endpoint(endpoint) {
