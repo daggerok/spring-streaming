@@ -4,12 +4,11 @@ import React, {Component} from 'react'
 import {render} from 'react-dom'
 import {Router, browserHistory, Route, IndexRoute} from 'react-router'
 
-
-import Nav from './components/Nav'
-import Links from './components/Links'
+import Nav    from './components/Nav'
+import Links  from './components/Links'
 import Footer from './components/Footer'
-import Index from './components/Index'
-import Admin from './admin/components/Admin'
+import Index  from './components/Index'
+import Admin  from './admin/components/Admin'
 
 class App extends Component {
   render() {
