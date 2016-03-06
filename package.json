@@ -8,7 +8,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/winterbe/spring-kotlin-react-demo"
+    "url": "git+https://github.com/dageerok/spring-streaming.git"
   },
   "scripts": {
     "build": "npm i && webpack --config node/webpack/prod.js -p ",
@@ -51,5 +51,21 @@
       "transform-class-properties",
       "transform-decorators-legacy"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/dageerok/spring-streaming/issues"
+  },
+  "homepage": "https://github.com/dageerok/spring-streaming#readme",
+  "dependencies": {},
+  "keywords": [
+    "webpack",
+    "babel",
+    "es6",
+    "jsx",
+    "react",
+    "react-router",
+    "react-router-active-component",
+    "bootstrap",
+    "jquery"
+  ]
 }
