@@ -11,12 +11,11 @@
     "url": "git+https://github.com/dageerok/spring-streaming.git"
   },
   "scripts": {
-    "build": "npm i && webpack --config node/webpack/prod.js -p ",
-    "start": "npm i && webpack --config node/webpack/dev.js -w",
-    "test": " npm i && webpack --config node/webpack/dev.js"
+    "build": "npm i && webpack --config npm/webpack/prod.js -p ",
+    "start": "npm i && webpack --config npm/webpack/dev.js -w",
+    "test": " npm i && webpack --config npm/webpack/dev.js"
   },
   "devDependencies": {
-    "babel": "^6.5.2",
     "babel-core": "^6.6.5",
     "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.1.2",

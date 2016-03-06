@@ -13,7 +13,7 @@ plugins {
 apply plugin:   'com.github.ben-manes.versions'
 
 apply from:     'gradle/allprojects.gradle'
-apply from:     'gradle/node.gradle'
+apply from:     'gradle/npm.gradle'
 apply from:     'gradle/streaming.gradle'
 apply from:     'gradle/admin.gradle'
 apply from:     'gradle/user.gradle'
