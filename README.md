@@ -5,9 +5,7 @@ SPA boilerplate on Spring Boot with WebSockets and React (in progress...)
 
 full stack:
 
-- gradle, node, npm, webpack
-
-- spring:
+- backend:
   - spring boot
   - spring-mvc
   - spring-security
@@ -15,9 +13,19 @@ full stack:
   - spring-data-rest
   - spring-hateoas
 
-- babel ES6, React, JSX
+- frontend
+  - bootstrap
+  - babel ES6
+  - React:
+    - JSX
+    - react-router
 
-- live reload (spring-boot-devtools)
+- build:
+  - gradle
+  - node
+  - npm
+  - webpack
+  - spring-boot-devtools (live reload)
 
 npm is required
 
@@ -62,8 +70,14 @@ npm update -D # or gradle npm -Ptask=update
 
 read more:
 
-- [webpack production optimizations ] (https://github.com/webpack/docs/wiki/code-splitting)
+- [webpack production optimizations](https://github.com/webpack/docs/wiki/code-splitting)
 
-- [webpack plugins ] (https://github.com/webpack/docs/wiki/list-of-plugins)
+- [webpack plugins](https://github.com/webpack/docs/wiki/list-of-plugins)
 
-- [gradle versions plugin] (https://github.com/ben-manes/gradle-versions-plugin)
+- [gradle versions plugin](https://github.com/ben-manes/gradle-versions-plugin)
+
+- [React](https://facebook.github.io/react/docs/getting-started.html)
+
+- [react-router](https://github.com/reactjs/react-router)
+
+- [react-active-component](https://github.com/insin/react-router-active-component)
