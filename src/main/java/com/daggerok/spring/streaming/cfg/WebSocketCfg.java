@@ -23,9 +23,16 @@ public class WebSocketCfg extends AbstractWebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/messaging").withSockJS();
     }
-
+/*
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.enableSimpleBroker().setTaskScheduler(cfg.scheduler());
+    }
+*/
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry registry) {
+        registry.setApplicationDestinationPrefixes("/app")
+                .enableSimpleBroker("/topic", "/queue") // replace this embedded broker with rabbotmq/activemq
+                .setTaskScheduler(cfg.scheduler());
     }
 }

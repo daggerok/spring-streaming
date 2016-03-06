@@ -6,4 +6,5 @@ gradle/wrapper/
 out/
 build/
 node_modules/
+src/main/www/bower/
 src/main/resources/public/

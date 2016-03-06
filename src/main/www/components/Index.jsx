@@ -1,13 +1,16 @@
 import React, {Component} from 'react'
 import TicTacToe from './Index/TicTacToe'
+import {SockJS, Stomp} from './Bower'
 
 export default class Index extends Component {
   render() {
+    console.log('SockJS', SockJS)
+    console.log('Stomp', Stomp)
     return (
-     <div class="container-fluid">
-       <p>some tic-tac and sse-interval esting</p>
-       <TicTacToe />
-     </div>
+      <div class="container-fluid">
+        <p>some tic-tac and sse-interval esting</p>
+        <TicTacToe />
+      </div>
     )
   }
 }
