@@ -40,8 +40,7 @@
     "stompjs": "^2.3.3",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.14",
-    "websocket": "^1.0.22"
+    "webpack": "^1.12.14"
   },
   "babel": {
     "presets": [
