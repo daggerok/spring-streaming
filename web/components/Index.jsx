@@ -36,7 +36,7 @@ export default class Index extends Component {
   }
 
   disconnect() {
-    this.state.ws.disconnect()
+    this.state.ws.unsubscribeAll()
   }
 
   render() {

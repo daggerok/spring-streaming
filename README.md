@@ -32,7 +32,6 @@ npm is required
 production mode:
 
 ```shell
-gradle npm # or npm run build
 gradle clean build
 java -jar build/libs/*.jar
 ```
@@ -42,12 +41,13 @@ development mode:
 ```shell
 npm start
 gradle bootRun
+open http://localhost:8080
 ```
 
 open page, turn on livereload browser extension, in idea change code and press alt+command+y, command+f9
 this will rebuild your java/javascript sources and trigger spring-boot-devtools restart/reload handler
 
-testing
+testing Ssemmiter
 ```shell
 curl -iv localhost:8080/test/sse-interval # or open these URLs in the browser
 curl -iv localhost:8080/test/sse-interval-with-status

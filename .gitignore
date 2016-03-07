@@ -1,3 +1,4 @@
+.DS_Store
 *.ipr
 *.iws
 .gradle/
@@ -6,5 +7,5 @@ gradle/wrapper/
 out/
 build/
 node_modules/
-src/main/www/ws/sockjs/
+web/ws/sockjs/
 src/main/resources/public/

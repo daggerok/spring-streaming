@@ -1,18 +1,18 @@
 'use strict';
 
 let
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
   context = `${__dirname}/../..`,
-  mainDir = `${context}/src/main`
+  webDir = `${context}/web`
 
 module.exports = {
   context,
   devtool: 'cheap-inline-module-source-map',
   entry: {
-    app: `${mainDir}/www/main`,
-    admin: `${mainDir}/www/admin/main`
+    app: `${webDir}/main`
   },
   output: {
-    path: `${mainDir}/resources/public/`,
+    path: `${context}/src/main/resources/public/`,
     filename: '[name].js'
     // used to generate URLs to e.g. images
     //publicPath: 'http://npm mycdn.com/'
@@ -34,5 +34,14 @@ module.exports = {
       {test: /\.(png|jpg)$/, loader: 'url-loader?limit=5120'}
     ]
   },
-  plugins: []
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'web/html/index.html',
+      favicon: 'web/html/favicon.ico',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    })
+  ]
 }

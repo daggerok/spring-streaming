@@ -1,6 +1,6 @@
 {
   "name": "spring-streaming",
-  "description": "SockJS",
+  "description": "SockJS vendor for browser",
   "license": "ISC",
   "private": true,
   "dependencies": {
