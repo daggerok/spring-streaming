@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import {Component} from 'react'
 import TicTac from './TicTac'
 
 export default class TicTacToe extends Component {

@@ -12,8 +12,8 @@ plugins {
 
 apply plugin:   'com.github.ben-manes.versions'
 
-apply from:     'gradle/allprojects.gradle'
-apply from:     'gradle/streaming.gradle'
-apply from:     'gradle/admin.gradle'
-apply from:     'gradle/user.gradle'
-apply from:     'gradle/web.gradle'
+apply from:     "$rootProject.projectDir/gradle/allprojects.gradle"
+apply from:     "$rootProject.projectDir/gradle/streaming.gradle"
+apply from:     "$rootProject.projectDir/gradle/admin.gradle"
+apply from:     "$rootProject.projectDir/gradle/user.gradle"
+apply from:     "$rootProject.projectDir/gradle/web.gradle"

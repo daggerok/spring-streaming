@@ -1,6 +1,6 @@
 import './styles'
 
-import React, {Component} from 'react'
+import {Component} from 'react'
 import {render} from 'react-dom'
 import {Router, browserHistory, Route, IndexRoute} from 'react-router'
 

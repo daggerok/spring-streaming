@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import {Component} from 'react'
 import $ from 'jquery'
 
 export default class TicTac extends Component {

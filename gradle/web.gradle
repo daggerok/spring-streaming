@@ -4,17 +4,25 @@ import org.apache.tools.ant.taskdefs.condition.Os
 task web(type: Exec) {
     def isWindows = Os.isFamily(Os.FAMILY_WINDOWS)
     def task = project.hasProperty('task') ? project.property('task') : defaultTask
-    def script = "${project.projectDir}/npm/run/$task.${isWindows ? 'cmd' : 'bash'}"
+    def script = "$project.projectDir/npm/run/$task.${isWindows ? 'cmd' : 'bash'}"
 
     commandLine isWindows ? ['cmd', '/c', script] : ['bash', '-x', script]
 }
 
 project(':web') {
-  clean {
-      delete "${rootProject.projectDir}/web/build"
-      //delete "${rootProject.projectDir}/web/ws/sockjs"
-      delete "${rootProject.projectDir}/src/main/resources/public"
-  }
+    clean {
+        delete "$rootProject.projectDir/web/build"
+        delete "$rootProject.projectDir/src/main/resources/public"
+    }
+
+    task clear(dependsOn: clean) {
+        shouldRunAfter clean
+
+        clean {
+            delete "$rootProject.projectDir/node_modules/"
+            delete "$rootProject.projectDir/web/ws/sockjs/"
+        }
+    }
 }
 
 build.dependsOn web
