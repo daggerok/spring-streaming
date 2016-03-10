@@ -70,11 +70,15 @@ npm update -D # or gradle npm -Ptask=update
 
 read more:
 
+- [spring](https://spring.io)
+
+- [spring-gradle versions plugin](https://github.com/spring-gradle-plugins/dependency-management-plugin)
+
+- [gradle versions plugin](https://github.com/ben-manes/gradle-versions-plugin)
+
 - [webpack production optimizations](https://github.com/webpack/docs/wiki/code-splitting)
 
 - [webpack plugins](https://github.com/webpack/docs/wiki/list-of-plugins)
-
-- [gradle versions plugin](https://github.com/ben-manes/gradle-versions-plugin)
 
 - [React](https://facebook.github.io/react/docs/getting-started.html)
 
