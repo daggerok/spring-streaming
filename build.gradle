@@ -1,7 +1,8 @@
 buildscript {
     repositories { jcenter() }
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion",
+        classpath "io.spring.gradle:dependency-management-plugin:$dependencyMgmtPluginVer",
+                  "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion",
                   "com.github.ben-manes:gradle-versions-plugin:$gradleVersionsPluginVersion"
     }
 }
