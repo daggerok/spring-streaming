@@ -72,7 +72,7 @@ read more:
 
 - [spring](https://spring.io)
 
-- [spring-gradle versions plugin](https://github.com/spring-gradle-plugins/dependency-management-plugin)
+- [spring-gradle dependency management plugin](https://github.com/spring-gradle-plugins/dependency-management-plugin)
 
 - [gradle versions plugin](https://github.com/ben-manes/gradle-versions-plugin)
 
