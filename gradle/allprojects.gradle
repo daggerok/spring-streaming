@@ -1,14 +1,14 @@
 allprojects {
-    apply plugin: 'java'
-    apply plugin: 'io.spring.dependency-management'
-    apply plugin: 'spring-boot'
-    apply plugin: 'application'
-
     dependencyManagement {
         imports {
             mavenBom "org.springframework.boot:spring-boot-starter-parent:$springBootVersion"
         }
     }
+
+    apply plugin: 'java'
+    apply plugin: 'spring-boot'
+    apply plugin: 'application'
+    apply plugin: 'com.github.ben-manes.versions'
 
     mainClassName = 'com.daggerok.spring.streaming.SpringStreamingApplication'
 
