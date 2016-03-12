@@ -13,6 +13,7 @@ plugins {
 
 apply from:     "$rootProject.projectDir/gradle/allprojects.gradle"
 apply from:     "$rootProject.projectDir/gradle/streaming.gradle"
+apply from:     "$rootProject.projectDir/gradle/reactor.gradle"
 apply from:     "$rootProject.projectDir/gradle/admin.gradle"
 apply from:     "$rootProject.projectDir/gradle/user.gradle"
 apply from:     "$rootProject.projectDir/gradle/web.gradle"

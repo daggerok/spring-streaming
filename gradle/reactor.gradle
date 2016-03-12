@@ -1,0 +1,8 @@
+project(':reactor') {
+    dependencies {
+        compile 'com.fasterxml.jackson.core:jackson-databind',
+                "io.projectreactor:reactor-bus:$reactorVersion",
+                'org.springframework.boot:spring-boot-starter-data-rest',
+                'org.springframework.boot:spring-boot-starter-hateoas'
+    }
+}
