@@ -16,7 +16,7 @@
   "main": "src/main/www/main.js",
   "scripts": {
     "ino": "npm i --no-optional",
-    "postinstall": "bower install",
+    "postinstall": "bower install --config.interactive=false",
     "build": "npm run ino && webpack --config npm/webpack/prod.js -p ",
     "start": "npm run ino && webpack --config npm/webpack/dev.js -w",
     "test": " npm run ino && webpack --config npm/webpack/dev.js"
