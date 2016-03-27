@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "jquery": "^2.2.1",
+    "jquery": "^2.2.2",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0",
@@ -46,7 +46,7 @@
     "stompjs": "^2.3.3"
   },
   "devDependencies": {
-    "babel-core": "^6.7.2",
+    "babel-core": "^6.7.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-plugin-transform-class-properties": "^6.6.0",
@@ -58,10 +58,10 @@
     "bower": "^1.7.7",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
-    "html-webpack-plugin": "^2.10.0",
+    "html-webpack-plugin": "^2.14.0",
     "less": "^2.6.0",
-    "less-loader": "^2.2.2",
-    "style-loader": "^0.13.0",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14"
   },
