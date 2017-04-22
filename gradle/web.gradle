@@ -25,5 +25,5 @@ project(':web') {
     }
 }
 
-build.dependsOn web
-build.shouldRunAfter web
+assemble.dependsOn web
+assemble.shouldRunAfter web

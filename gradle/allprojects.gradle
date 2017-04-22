@@ -6,8 +6,8 @@ allprojects {
     }
 
     apply plugin: 'java'
-    apply plugin: 'spring-boot'
     apply plugin: 'application'
+    apply plugin: 'org.springframework.boot'
     apply plugin: 'com.github.ben-manes.versions'
 
     mainClassName = 'com.daggerok.spring.streaming.SpringStreamingApplication'
@@ -29,6 +29,10 @@ allprojects {
 
     // gradle run -Dserver.context-path=/app
     run { systemProperties = System.properties }
+
+    springBoot {
+        executalbe = true
+    }
 
     task wrapper(type: Wrapper) { gradleVersion = gradleVersion }
 }

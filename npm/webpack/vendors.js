@@ -7,19 +7,10 @@ let
   exclude = /(node_modules|bower_components)/,
   webpack = require('webpack'),
   definePlugin = webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(process.env.BUILD_PROD ? 'production' : 'development'),
     __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
     __PROD__: JSON.stringify(JSON.parse(process.env.BUILD_PROD || 'false'))
-  })
-
-/*
-  // in the code:
-  if (__DEV__) {
-    console.warn('some extra debug logging');
-  }
-  if (__PROD__) {
-    helpdesk.notify('send crash report');
-  }
-*/
+  });
 
 module.exports = {
   context,
@@ -59,10 +50,15 @@ module.exports = {
   // This will remove all modules in the vendors chunk from the app and admin chunks. (see condig.entry)
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors',
-      filename: 'vendors.js'
-      // with this, you will link only one bundle on a page (app.js or admin.js), within vendors.js inside
-      // children: true,
+      names: [
+        'app',
+        'admin',
+        'vendors',
+        'manifest',
+      ],
+      // filename: 'vendors.js'
+      // // with this, you will link only one bundle on a page (app.js or admin.js), within vendors.js inside
+      // // children: true,
     })
   ]
-}
+};

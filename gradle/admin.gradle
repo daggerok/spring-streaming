@@ -1,9 +1,6 @@
 project(':admin') {
     dependencies {
-        compile 'org.springframework.boot:spring-boot-starter-remote-shell',
-                'org.springframework.data:spring-data-rest-hal-browser',
-                'org.springframework.boot:spring-boot-starter-actuator',
-                'org.springframework.boot:spring-boot-actuator-docs',
+        compile 'org.springframework.boot:spring-boot-starter-actuator',
                 'org.springframework.boot:spring-boot-starter-hateoas',
                 'com.h2database:h2'
     }

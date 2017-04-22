@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import React, {Component} from 'react'
 import TicTacToe from './Index/TicTacToe'
 import WS from '../ws'
 

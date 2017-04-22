@@ -1,4 +1,4 @@
-spring-streaming [![build] (https://travis-ci.org/daggerok/spring-streaming.svg?branch=master)] (https://travis-ci.org/daggerok/spring-streaming) 
+spring-streaming [![Build Status](https://travis-ci.org/daggerok/spring-streaming.svg?branch=master)](https://travis-ci.org/daggerok/spring-streaming)
 ================
 
 SPA boilerplate on Spring Boot with WebSockets and React (in progress...)
@@ -71,17 +71,10 @@ npm update -D # or gradle npm -Ptask=update
 read more:
 
 - [spring](https://spring.io)
-
 - [spring-gradle dependency management plugin](https://github.com/spring-gradle-plugins/dependency-management-plugin)
-
 - [gradle versions plugin](https://github.com/ben-manes/gradle-versions-plugin)
-
 - [webpack production optimizations](https://github.com/webpack/docs/wiki/code-splitting)
-
 - [webpack plugins](https://github.com/webpack/docs/wiki/list-of-plugins)
-
 - [React](https://facebook.github.io/react/docs/getting-started.html)
-
 - [react-router](https://github.com/reactjs/react-router)
-
 - [react-active-component](https://github.com/insin/react-router-active-component)

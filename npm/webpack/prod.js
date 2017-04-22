@@ -7,14 +7,14 @@ let
 your multi line company banner is here...
 
 2016 (c) Maksim Kostromin
-`
+`;
 
-config.devtool = null
+config.devtool = '#cheap-source-map';
 config.plugins = [
   ...config.plugins,
   new webpack.optimize.DedupePlugin(),
   new webpack.optimize.OccurenceOrderPlugin(),
-  new webpack.optimize.UglifyJsPlugin({
+  /*new webpack.optimize.UglifyJsPlugin({
     sourcemap: false,
     compress: {
       warnings: false
@@ -27,8 +27,8 @@ config.plugins = [
         'require'
       ]
     }
-  }),
+  }),*/
   new webpack.BannerPlugin(banner),
-]
+];
 
-module.exports = config
+module.exports = config;

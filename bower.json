@@ -4,7 +4,7 @@
   "license": "ISC",
   "private": true,
   "dependencies": {
-    "sockjs": "^0.3.4"
+    "sockjs": "0.3.4"
   },
   "disabled": {
     "stomp": "stomp-websocket#~2.3.4"

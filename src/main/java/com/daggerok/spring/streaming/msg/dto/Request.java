@@ -1,6 +1,6 @@
 package com.daggerok.spring.streaming.msg.dto;
 
-import groovy.transform.builder.Builder;
+import lombok.Builder;
 import lombok.Value;
 
 import java.util.Collections;

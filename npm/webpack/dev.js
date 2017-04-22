@@ -3,11 +3,11 @@
 let
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   context = `${__dirname}/../..`,
-  webDir = `${context}/web`
+  webDir = `${context}/web`;
 
 module.exports = {
   context,
-  devtool: 'cheap-inline-module-source-map',
+  devtool: '#cheap-inline-source-map',
   entry: {
     app: `${webDir}/main`
   },
@@ -36,6 +36,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      cache: true,
+      showErrors: true,
+      excludeChunks: [],
+      xhtml: true,
       template: 'web/html/index.html',
       favicon: 'web/html/favicon.ico',
       minify: {
@@ -44,4 +48,4 @@ module.exports = {
       }
     })
   ]
-}
+};
