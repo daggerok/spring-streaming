@@ -9,14 +9,14 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class AdminApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(AdminApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(AdminApplication.class, args);
+  }
 
-    @Bean
-    public ServletRegistrationBean h2servletRegistration() {
-        ServletRegistrationBean registration = new ServletRegistrationBean(new WebServlet());
-        registration.addUrlMappings("/console/*");
-        return registration;
-    }
+  @Bean
+  public ServletRegistrationBean h2servletRegistration() {
+    ServletRegistrationBean registration = new ServletRegistrationBean(new WebServlet());
+    registration.addUrlMappings("/console/*");
+    return registration;
+  }
 }

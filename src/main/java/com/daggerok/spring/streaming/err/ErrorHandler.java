@@ -15,19 +15,19 @@ import java.util.logging.Level;
 @Log
 @Controller
 public class ErrorHandler implements ErrorController {
-    @Value("${error.path:/error}")
-    String errorPath;
+  @Value("${error.path:/error}")
+  String errorPath;
 
-    String rootPath = "/";
+  String rootPath = "/";
 
-    @Override
-    public String getErrorPath() {
-        return errorPath;
-    }
+  @Override
+  public String getErrorPath() {
+    return errorPath;
+  }
 
-    @RequestMapping(value = "/error", produces = MediaType.APPLICATION_JSON_VALUE)
-    public void error(HttpServletRequest request, HttpServletResponse response, Throwable e) throws IOException {
-        if (log.isLoggable(Level.INFO)) log.info("\nhandle an error for " + e);
-        response.sendRedirect(request.getContextPath().concat(rootPath));
-    }
+  @RequestMapping(value = "/error", produces = MediaType.APPLICATION_JSON_VALUE)
+  public void error(HttpServletRequest request, HttpServletResponse response, Throwable e) throws IOException {
+    if (log.isLoggable(Level.INFO)) log.info("\nhandle an error for " + e);
+    response.sendRedirect(request.getContextPath().concat(rootPath));
+  }
 }

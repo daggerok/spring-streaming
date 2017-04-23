@@ -11,14 +11,15 @@ import java.util.stream.Stream;
 @Value
 @Builder
 public class Request {
-    final String data;
-    public String transform() {
-        List<String> list = Stream.of(data.toCharArray())
-                .map(String::valueOf)
-                .map(String::toUpperCase)
-                .collect(Collectors.toList());
+  final String data;
 
-        Collections.reverse(list);
-        return list.stream().collect(Collectors.joining());
-    }
+  public String transform() {
+    List<String> list = Stream.of(data.toCharArray())
+        .map(String::valueOf)
+        .map(String::toUpperCase)
+        .collect(Collectors.toList());
+
+    Collections.reverse(list);
+    return list.stream().collect(Collectors.joining());
+  }
 }

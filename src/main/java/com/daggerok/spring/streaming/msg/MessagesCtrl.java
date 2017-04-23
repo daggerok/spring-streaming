@@ -8,9 +8,9 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class MessagesCtrl {
-    @MessageMapping("/chat")
-    @SendTo("/topic/message")
-    public Response sendMessage(Request request) {
-        return Response.of(request.transform());
-    }
+  @MessageMapping("/chat")
+  @SendTo("/topic/message")
+  public Response sendMessage(Request request) {
+    return Response.of(request.transform());
+  }
 }

@@ -1,38 +1,39 @@
 allprojects {
-    dependencyManagement {
-        imports {
-            mavenBom "org.springframework.boot:spring-boot-starter-parent:$springBootVersion"
-        }
+
+  apply plugin: 'java'
+  apply plugin: 'application'
+  apply plugin: 'org.springframework.boot'
+  apply plugin: 'com.github.ben-manes.versions'
+
+  sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+
+  mainClassName = 'com.daggerok.spring.streaming.SpringStreamingApplication'
+
+  repositories { jcenter() }
+
+  dependencies {
+    compileOnly 'org.projectlombok:lombok'
+    compile 'org.springframework.boot:spring-boot-starter'
+    runtime 'org.springframework.boot:spring-boot-devtools'
+    testCompileOnly 'org.projectlombok:lombok'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+  }
+
+  // gradle bootRun -Dserver.context-path=/app
+  bootRun { systemProperties = System.properties }
+
+  // gradle run -Dserver.context-path=/app
+  run { systemProperties = System.properties }
+
+  springBoot {
+    executable = true
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom "org.springframework.boot:spring-boot-dependencies:$springBootVersion"
     }
+  }
 
-    apply plugin: 'java'
-    apply plugin: 'application'
-    apply plugin: 'org.springframework.boot'
-    apply plugin: 'com.github.ben-manes.versions'
-
-    mainClassName = 'com.daggerok.spring.streaming.SpringStreamingApplication'
-
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = sourceCompatibility
-
-    repositories { jcenter() }
-
-    dependencies {
-        compile 'org.springframework.boot:spring-boot-starter',
-                "org.projectlombok:lombok:${lombokVersion}"
-
-        testCompile 'org.springframework.boot:spring-boot-starter-test'
-    }
-
-    // gradle bootRun -Dserver.context-path=/app
-    bootRun { systemProperties = System.properties }
-
-    // gradle run -Dserver.context-path=/app
-    run { systemProperties = System.properties }
-
-    springBoot {
-        executalbe = true
-    }
-
-    task wrapper(type: Wrapper) { gradleVersion = gradleVersion }
+  task wrapper(type: Wrapper) { gradleVersion = gradleVersion }
 }

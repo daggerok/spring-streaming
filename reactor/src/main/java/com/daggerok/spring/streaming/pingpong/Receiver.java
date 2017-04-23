@@ -14,22 +14,25 @@ import java.util.concurrent.CountDownLatch;
 @Slf4j
 @Service
 public class Receiver implements Consumer<Event<Integer>> {
-    @Autowired CountDownLatch countDownLatch;
+  @Autowired
+  CountDownLatch countDownLatch;
 
-    @Autowired RestTemplate restTemplate;
+  @Autowired
+  RestTemplate restTemplate;
 
-    @Autowired ObjectMapper objectMapper;
+  @Autowired
+  ObjectMapper objectMapper;
 
-    /**
-     * Execute the logic of the action, accepting the given parameter.
-     *
-     * @param integerEvent The parameter to pass to the consumer.
-     */
-    @Override
-    @SneakyThrows
-    public void accept(Event<Integer> integerEvent) {
-        Resource resource = restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random", Resource.class);
+  /**
+   * Execute the logic of the action, accepting the given parameter.
+   *
+   * @param integerEvent The parameter to pass to the consumer.
+   */
+  @Override
+  @SneakyThrows
+  public void accept(Event<Integer> integerEvent) {
+    Resource resource = restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random", Resource.class);
 
-        log.info("Model {}: {}", integerEvent.getData(), objectMapper.writeValueAsString(resource));
-    }
+    log.info("Model {}: {}", integerEvent.getData(), objectMapper.writeValueAsString(resource));
+  }
 }

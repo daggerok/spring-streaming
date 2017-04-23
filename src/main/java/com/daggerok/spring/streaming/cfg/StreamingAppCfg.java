@@ -11,9 +11,9 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 @Configuration
 @ComponentScan(basePackageClasses = SpringStreamingApplication.class)
 public class StreamingAppCfg {
-    @Bean
-    @Primary
-    public TaskScheduler scheduler() {
-        return new ThreadPoolTaskScheduler();
-    }
+  @Bean
+  @Primary
+  public TaskScheduler scheduler() {
+    return new ThreadPoolTaskScheduler();
+  }
 }

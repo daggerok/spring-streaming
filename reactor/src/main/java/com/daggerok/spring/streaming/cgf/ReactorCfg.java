@@ -10,19 +10,23 @@ import java.util.concurrent.CountDownLatch;
 
 @Configuration
 public class ReactorCfg {
-    @Bean public CountDownLatch countDownLatch() {
-        return new CountDownLatch(3);
-    }
+  @Bean
+  public CountDownLatch countDownLatch() {
+    return new CountDownLatch(3);
+  }
 
-    @Bean public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+  @Bean
+  public RestTemplate restTemplate() {
+    return new RestTemplate();
+  }
 
-    @Bean Environment env() {
-        return Environment.initializeIfEmpty().assignErrorJournal();
-    }
+  @Bean
+  Environment env() {
+    return Environment.initializeIfEmpty().assignErrorJournal();
+  }
 
-    @Bean EventBus createEventBus(Environment env) {
-        return EventBus.create(env, Environment.THREAD_POOL);
-    }
+  @Bean
+  EventBus createEventBus(Environment env) {
+    return EventBus.create(env, Environment.THREAD_POOL);
+  }
 }

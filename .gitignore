@@ -1,9 +1,12 @@
 .DS_Store
+*.iml
 *.ipr
 *.iws
 .gradle/
-gradle/wrapper/
+gradle*
+!gradle/*.gradle
 .idea/
+!.idea/runConfigurations/*
 out/
 build/
 node_modules/

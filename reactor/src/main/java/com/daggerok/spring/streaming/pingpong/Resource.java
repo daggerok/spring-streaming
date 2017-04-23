@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Resource implements Serializable {
-    private static final long serialVersionUID = 1541951122250148466L;
-    String type;
-    Model value;
+  private static final long serialVersionUID = 1541951122250148466L;
+  String type;
+  Model value;
 }

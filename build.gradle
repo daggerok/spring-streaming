@@ -1,15 +1,8 @@
-buildscript {
-    repositories { jcenter() }
-    dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion",
-                  "com.github.ben-manes:gradle-versions-plugin:$gradleVersionsPluginVersion"
-    }
-}
-
 plugins {
-    id "io.spring.dependency-management" version "1.0.2.RELEASE"
-    id "org.springframework.boot" version "1.5.3.RELEASE"
-    id "net.saliman.properties" version "1.4.5"
+  id 'io.spring.dependency-management' version '1.0.2.RELEASE'
+  id 'org.springframework.boot' version '1.5.3.RELEASE'
+  id 'com.github.ben-manes.versions' version '0.14.0'
+  id 'net.saliman.properties' version '1.4.5'
 }
 
 apply from: "$rootProject.projectDir/gradle/allprojects.gradle"

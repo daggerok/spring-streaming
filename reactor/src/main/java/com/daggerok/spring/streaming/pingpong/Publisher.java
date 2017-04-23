@@ -14,24 +14,26 @@ import java.util.stream.IntStream;
 @Slf4j
 @Service
 public class Publisher {
-    @Autowired EventBus eventBus;
+  @Autowired
+  EventBus eventBus;
 
-    @Autowired CountDownLatch countDownLatch;
+  @Autowired
+  CountDownLatch countDownLatch;
 
-    @SneakyThrows
-    public void publishModel(int times) {
-        long start = System.currentTimeMillis();
+  @SneakyThrows
+  public void publishModel(int times) {
+    long start = System.currentTimeMillis();
 
-        AtomicInteger counter = new AtomicInteger(1);
+    AtomicInteger counter = new AtomicInteger(1);
 
-        IntStream.range(0, times).forEach(value ->
-                eventBus.notify("models", Event.wrap(counter.getAndIncrement())));
+    IntStream.range(0, times).forEach(value ->
+        eventBus.notify("models", Event.wrap(counter.getAndIncrement())));
 
-        countDownLatch.await();
+    countDownLatch.await();
 
-        long elapsed = System.currentTimeMillis() - start;
+    long elapsed = System.currentTimeMillis() - start;
 
-        log.info("Elapsed time: {} ms", elapsed);
-        log.info("Average time per quote: {} ms", elapsed / times);
-    }
+    log.info("Elapsed time: {} ms", elapsed);
+    log.info("Average time per quote: {} ms", elapsed / times);
+  }
 }

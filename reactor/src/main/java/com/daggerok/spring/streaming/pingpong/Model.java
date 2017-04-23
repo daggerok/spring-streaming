@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Model implements Serializable {
-    private static final long serialVersionUID = 4997822214345757899L;
-    Long id;
-    String body;
+  private static final long serialVersionUID = 4997822214345757899L;
+  Long id;
+  String body;
 }

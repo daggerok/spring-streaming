@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @Data
 @RequiredArgsConstructor(staticName = "of")
 public class Response {
-    @NonNull String data;
-    LocalDateTime at = LocalDateTime.now();
+  @NonNull
+  String data;
+  LocalDateTime at = LocalDateTime.now();
 }

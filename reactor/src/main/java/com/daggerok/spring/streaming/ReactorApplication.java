@@ -21,18 +21,18 @@ import static reactor.bus.selector.Selectors.$;
 @Import(ReactorCfg.class)
 public class ReactorApplication {
 
-    @SneakyThrows
-    public static void main(String[] args) {
-        new Thread(() -> SpringApplication.run(ReactorApplication.class, args)).start();
-        TimeUnit.SECONDS.sleep(10);
-        System.exit(0);
-    }
+  @SneakyThrows
+  public static void main(String[] args) {
+    new Thread(() -> SpringApplication.run(ReactorApplication.class, args)).start();
+    TimeUnit.SECONDS.sleep(10);
+    System.exit(0);
+  }
 
-    @Bean
-    public CommandLineRunner runner(EventBus eventBus, Receiver receiver, Publisher publisher) {
-        return args -> {
-            eventBus.on($("models"), receiver);
-            publisher.publishModel(10);
-        };
-    }
+  @Bean
+  public CommandLineRunner runner(EventBus eventBus, Receiver receiver, Publisher publisher) {
+    return args -> {
+      eventBus.on($("models"), receiver);
+      publisher.publishModel(10);
+    };
+  }
 }

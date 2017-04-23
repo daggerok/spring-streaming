@@ -1,7 +1,23 @@
+sudo: required
 language: java
 jdk: oraclejdk8
-before_script: nvm install 5
-script: gradle clean build
+install: true
+before_install:
+  # gradle
+  - curl -s "https://get.sdkman.io" | bash
+  - source "$HOME/.sdkman/bin/sdkman-init.sh"
+  - sdk selfupdate
+  - touch "$HOME/.sdkman/etc/config"
+  - sed -i -e 's/^sdkman_auto_answer=false$/sdkman_auto_answer=true/g' "$HOME/.sdkman/etc/config"
+  - sdk use gradle
+  - mkdir -p "$HOME/.sdkman/etc"
+  - source "$HOME/.sdkman/bin/sdkman-init.sh"
+before_script:
+  - nvm install 6
+script:
+  - gradle clean build
+  - gradle assemble --parallel
+  - gradle dependencyUpdates -Drevision=release
 cache:
   directories:
     - $HOME/.gradle/
