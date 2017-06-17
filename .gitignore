@@ -10,5 +10,6 @@ gradle*
 out/
 build/
 node_modules/
+bower_components/
 web/ws/sockjs/
 src/main/resources/public/

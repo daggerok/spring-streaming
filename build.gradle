@@ -1,7 +1,7 @@
 plugins {
-  id 'io.spring.dependency-management' version '1.0.2.RELEASE'
-  id 'org.springframework.boot' version '1.5.3.RELEASE'
-  id 'com.github.ben-manes.versions' version '0.14.0'
+  id 'io.spring.dependency-management' version '1.0.3.RELEASE'
+  id 'org.springframework.boot' version '1.5.4.RELEASE'
+  id 'com.github.ben-manes.versions' version '0.15.0'
   id 'net.saliman.properties' version '1.4.5'
 }
 
