@@ -8,10 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.io.IOException;
@@ -95,5 +92,10 @@ public class SseEmitterController {
   public String ticTac() throws IOException, InterruptedException {
     TimeUnit.MILLISECONDS.sleep(50);
     return "data:{message: 'thanks!'}\n";
+  }
+
+  @GetMapping
+  public String index() {
+    return "/index.html";
   }
 }

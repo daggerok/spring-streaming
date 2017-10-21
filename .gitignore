@@ -3,13 +3,12 @@
 *.ipr
 *.iws
 .gradle/
-gradle*
-!gradle/*.gradle
 .idea/
-!.idea/runConfigurations/*
 out/
 build/
 node_modules/
 bower_components/
 web/ws/sockjs/
 src/main/resources/public/
+package-lock.json
+yarn.lock

@@ -1,0 +1,27 @@
+plugins {
+  id "com.moowork.node" version "1.2.0"
+}
+
+node {
+  download = true
+  version = "6.9.1"
+  npmVersion = "5.0.3"
+  yarnVersion = "0.24.5"
+}
+
+clean {
+  delete "$rootProject.projectDir/web/build"
+  delete "$rootProject.projectDir/src/main/resources/public"
+}
+
+task clear(dependsOn: clean) {
+  shouldRunAfter clean
+
+  clean {
+    delete "$rootProject.projectDir/node_modules/"
+    delete "$rootProject.projectDir/web/ws/sockjs/"
+  }
+}
+
+assemble.dependsOn npm_run_build
+assemble.shouldRunAfter npm_run_build

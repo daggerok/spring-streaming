@@ -1,4 +1,0 @@
-dependencies {
-  compile project(":web"), project(":user"), project(":admin"),
-      'org.springframework.boot:spring-boot-starter-websocket'
-}

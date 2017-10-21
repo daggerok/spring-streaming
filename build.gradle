@@ -1,13 +1,70 @@
-plugins {
-  id 'io.spring.dependency-management' version '1.0.3.RELEASE'
-  id 'org.springframework.boot' version '1.5.4.RELEASE'
-  id 'com.github.ben-manes.versions' version '0.15.0'
-  id 'net.saliman.properties' version '1.4.5'
+buildscript {
+  ext {
+    environmentFileDir = "env"
+    springBootVersion = "1.5.8.RELEASE"
+    propertiesPluginEnvironmentNameProperty = "env"
+  }
 }
 
-apply from: "$rootProject.projectDir/gradle/allprojects.gradle"
-apply from: "$rootProject.projectDir/gradle/streaming.gradle"
-apply from: "$rootProject.projectDir/gradle/reactor.gradle"
-apply from: "$rootProject.projectDir/gradle/admin.gradle"
-apply from: "$rootProject.projectDir/gradle/user.gradle"
-apply from: "$rootProject.projectDir/gradle/web.gradle"
+plugins {
+  id "idea"
+  id "eclipse"
+  id "net.saliman.properties" version "1.4.6"
+  id "com.github.ben-manes.versions" version "0.15.0"
+  id "org.springframework.boot" version "1.5.8.RELEASE" apply false
+  id "io.spring.dependency-management" version "1.0.3.RELEASE" apply false
+}
+
+allprojects {
+
+  apply plugin: "java"
+  apply plugin: "application"
+  apply plugin: "org.springframework.boot"
+
+  version = "1.0.0"
+  group = "daggerok"
+
+  sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+
+  mainClassName = "com.daggerok.spring.streaming.SpringStreamingApplication"
+
+  repositories { jcenter() }
+
+  dependencies {
+    compileOnly "org.projectlombok:lombok"
+    compile "org.springframework.boot:spring-boot-starter"
+    runtime "org.springframework.boot:spring-boot-devtools"
+    testCompileOnly "org.projectlombok:lombok"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+  }
+
+  // gradle bootRun -Dserver.context-path=/app
+  bootRun { systemProperties = System.properties }
+
+  // gradle run -Dserver.context-path=/app
+  run { systemProperties = System.properties }
+
+  springBoot {
+    executable = true
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom "org.springframework.boot:spring-boot-dependencies:$springBootVersion"
+    }
+  }
+}
+
+dependencies {
+  compile project(":web"), project(":user"), project(":admin"),
+      "org.springframework.boot:spring-boot-starter-websocket"
+}
+
+wrapper {
+  gradleVersion = "4.2.1"
+  distributionType = "ALL"
+}
+
+bootRepackage {
+  enabled = false
+}
