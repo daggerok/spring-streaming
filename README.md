@@ -1,8 +1,6 @@
 # spring-streaming [![Build Status](https://travis-ci.org/daggerok/spring-streaming.svg?branch=master)](https://travis-ci.org/daggerok/spring-streaming)
 
-**Please take a note: I'm not going to support that crap anymore... JS libraries absolutely incompatible and non backward compatible during some time...**
-
-This example gradle multi-project showing Full-stack app using simplest Spring Boot 1.x and React frontend apps:
+This example gradle multi-project showing Full-stack app using simplest Spring Boot 1.x + Reactor event-bus, websockets and React frontend apps:
 
 - backend:
   - spring boot 1.5.15.RELEASE
@@ -27,6 +25,8 @@ This example gradle multi-project showing Full-stack app using simplest Spring B
   - spring-boot-devtools (live reload)
 
 npm is required
+
+**Please take a note: I'm not going to support that crap anymore... JS libraries absolutely incompatible and non backward compatible during some time... Sometimes in a past it worked.**
 
 production mode:
 
