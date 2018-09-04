@@ -1,5 +1,7 @@
-import SockJS from './sockjs/sockjs'
-import {Stomp} from 'stompjs/lib/stomp'
+const SockJS = window.SockJS;
+const Stomp = window.Stomp;
+// import SockJS from './sockjs/sockjs'
+// import {Stomp} from 'stompjs/lib/stomp'
 const defaultEndpoint = '/messaging'
 
 export default class WS {

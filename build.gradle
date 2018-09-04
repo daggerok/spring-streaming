@@ -1,68 +1,72 @@
 buildscript {
   ext {
-    environmentFileDir = "env"
-    springBootVersion = "1.5.8.RELEASE"
-    propertiesPluginEnvironmentNameProperty = "env"
+    environmentFileDir = 'env'
+    springBootVersion = '1.5.15.RELEASE'
+    propertiesPluginEnvironmentNameProperty = 'env'
   }
 }
 
 plugins {
-  id "idea"
-  id "eclipse"
-  id "net.saliman.properties" version "1.4.6"
-  id "com.github.ben-manes.versions" version "0.15.0"
-  id "org.springframework.boot" version "1.5.8.RELEASE" apply false
-  id "io.spring.dependency-management" version "1.0.3.RELEASE" apply false
+  id 'java'
+  id 'idea'
+  id 'eclipse'
+  id 'net.saliman.properties' version '1.4.6'
+  id 'com.github.ben-manes.versions' version '0.15.0'
+  id 'io.franzbecker.gradle-lombok' version '1.14' apply false
+  id 'org.springframework.boot' version '1.5.15.RELEASE' apply false
+  id 'io.spring.dependency-management' version '1.0.6.RELEASE' apply false
 }
 
 allprojects {
 
-  apply plugin: "java"
-  apply plugin: "application"
-  apply plugin: "org.springframework.boot"
+  apply plugin: 'java'
 
-  version = "1.0.0"
-  group = "daggerok"
+  version '2.0.0'
+  group 'com.github.daggerok'
+  sourceCompatibility = JavaVersion.VERSION_1_8
+  targetCompatibility = JavaVersion.VERSION_1_8
+  defaultTasks 'clean', 'build'
 
-  sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
-
-  mainClassName = "com.daggerok.spring.streaming.SpringStreamingApplication"
-
-  repositories { jcenter() }
-
-  dependencies {
-    compileOnly "org.projectlombok:lombok"
-    compile "org.springframework.boot:spring-boot-starter"
-    runtime "org.springframework.boot:spring-boot-devtools"
-    testCompileOnly "org.projectlombok:lombok"
-    testCompile "org.springframework.boot:spring-boot-starter-test"
+  repositories {
+    mavenCentral()
+    jcenter()
   }
 
-  // gradle bootRun -Dserver.context-path=/app
-  bootRun { systemProperties = System.properties }
+  apply plugin: 'io.franzbecker.gradle-lombok'
+  lombok.version = '1.18.2'
 
-  // gradle run -Dserver.context-path=/app
-  run { systemProperties = System.properties }
-
-  springBoot {
-    executable = true
-  }
+  apply plugin: 'io.spring.dependency-management'
 
   dependencyManagement {
     imports {
       mavenBom "org.springframework.boot:spring-boot-dependencies:$springBootVersion"
     }
   }
+
+  apply plugin: 'org.springframework.boot'
+
+  dependencies {
+    compile 'org.springframework.boot:spring-boot-starter'
+    runtime 'org.springframework.boot:spring-boot-devtools'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+  }
+
+  // gradle bootRun -Dserver.context-path=/app
+  bootRun { systemProperties = System.properties }
+
+  springBoot {
+    executable = true
+  }
 }
 
 dependencies {
-  compile project(":web"), project(":user"), project(":admin"),
-      "org.springframework.boot:spring-boot-starter-websocket"
+  compile project(':web'), project(':user'), project(':admin'),
+      'org.springframework.boot:spring-boot-starter-websocket'
 }
 
 wrapper {
-  gradleVersion = "4.2.1"
-  distributionType = "ALL"
+  gradleVersion = '4.10'
+  distributionType = 'BIN'
 }
 
 bootRepackage {

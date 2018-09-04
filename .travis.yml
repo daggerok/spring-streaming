@@ -1,21 +1,16 @@
-group: edge
-dist: trusty
-
 language: java
-jdk:
-  - openjdk8
-  - oraclejdk8
+jdk: oraclejdk8
+node_js: lts/*
 
-nstall: true
-before_script:
-  - nvm install 6
+install: true
 
 script:
-  - bash gradlew clean build
-  - bash gradlew dependencyUpdates -Drevision=release
+- ./gradlew
+- ./gradlew dependencyUpdates -Drevision=release
 
 cache:
   directories:
-    - web/node_modules/
-    - $HOME/.gradle/
-    - .gradle/
+  - web/node_modules/
+  - $HOME/.gradle/
+  - .gradle/
+  - .m2/

@@ -1,12 +1,11 @@
-spring-streaming [![Build Status](https://travis-ci.org/daggerok/spring-streaming.svg?branch=master)](https://travis-ci.org/daggerok/spring-streaming)
-================
+# spring-streaming [![Build Status](https://travis-ci.org/daggerok/spring-streaming.svg?branch=master)](https://travis-ci.org/daggerok/spring-streaming)
 
-SPA boilerplate on Spring Boot with WebSockets and React (in progress...)
+**Please take a note: I'm not going to support that crap anymore... JS libraries absolutely incompatible and non backward compatible during some time...**
 
-full stack:
+This example gradle multi-project showing Full-stack app using simplest Spring Boot 1.x and React frontend apps:
 
 - backend:
-  - spring boot
+  - spring boot 1.5.15.RELEASE
   - spring-mvc
   - spring-security
   - spring-messaging
