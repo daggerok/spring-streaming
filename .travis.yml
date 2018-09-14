@@ -2,10 +2,48 @@ language: java
 jdk: oraclejdk8
 node_js: lts/*
 
+addons:
+  apt:
+    packages:
+    - sudo
+    - lsof
+    - wget
+    - bash
+    - curl
+    - jq
+    - unzip
+    - python-pip
+    - libxml2-utils
+    - libappindicator1
+    - fonts-liberation
+    - google-chrome-stable
+
 install: true
+before_install:
+- export CHROME_BIN=/usr/bin/google-chrome
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+#
+- sudo pip install httpie >/dev/null 2>&1
+- source <(curl -s https://raw.githubusercontent.com/daggerok/bash-functions/master/main.bash)
 
 script:
 - ./gradlew
+- bash build/libs/*.jar &
+- wait_for 8080
+- http :8080
+- http :8080/api/
+- http :8080/console/
+- http :8080/test/tic-tac
+- sleep 1
+- http :8080/test/tic-tac-toe
+- sleep 1
+- http --stream get "http://127.0.0.1:8080/test/sse-interval" &
+- sleep 2
+- (http --stream get "http://127.0.0.1:8080/test/sse-interval") &
+- sleep 5
+- http :8080/test/streaming-response-body
+- stop_any 8080
 - ./gradlew dependencyUpdates -Drevision=release
 
 cache:

@@ -1,12 +1,12 @@
 plugins {
-  id "com.moowork.node" version "1.2.0"
+  id 'com.moowork.node' version '1.2.0'
 }
 
 node {
   download = true
-  version = "6.9.1"
-  npmVersion = "5.0.3"
-  yarnVersion = "0.24.5"
+  version = '6.9.1'
+  npmVersion = '5.0.3'
+  yarnVersion = '0.24.5'
 }
 
 clean {
@@ -23,5 +23,7 @@ task clear(dependsOn: clean) {
   }
 }
 
-assemble.dependsOn npm_run_build
-assemble.shouldRunAfter npm_run_build
+bootRepackage.enabled = false
+assemble.dependsOn processResources
+processResources.dependsOn npm_run_build
+processResources.shouldRunAfter npm_run_build

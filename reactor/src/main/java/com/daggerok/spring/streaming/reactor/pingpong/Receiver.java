@@ -1,6 +1,7 @@
-package com.daggerok.spring.streaming.pingpong;
+package com.daggerok.spring.streaming.reactor.pingpong;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +14,12 @@ import java.util.concurrent.CountDownLatch;
 
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class Receiver implements Consumer<Event<Integer>> {
-  @Autowired
-  CountDownLatch countDownLatch;
 
-  @Autowired
-  RestTemplate restTemplate;
-
-  @Autowired
-  ObjectMapper objectMapper;
+  final CountDownLatch countDownLatch;
+  final RestTemplate restTemplate;
+  final ObjectMapper objectMapper;
 
   /**
    * Execute the logic of the action, accepting the given parameter.

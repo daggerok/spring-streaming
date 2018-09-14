@@ -1,8 +1,9 @@
 buildscript {
   ext {
     environmentFileDir = 'env'
-    springBootVersion = '1.5.15.RELEASE'
+    springBootVersion = '1.5.16.RELEASE'
     propertiesPluginEnvironmentNameProperty = 'env'
+    className = 'com.daggerok.spring.streaming.SpringStreamingApplication'
   }
 }
 
@@ -10,33 +11,33 @@ plugins {
   id 'java'
   id 'idea'
   id 'eclipse'
+  id 'application'
   id 'net.saliman.properties' version '1.4.6'
   id 'com.github.ben-manes.versions' version '0.15.0'
   id 'io.franzbecker.gradle-lombok' version '1.14' apply false
-  id 'org.springframework.boot' version '1.5.15.RELEASE' apply false
   id 'io.spring.dependency-management' version '1.0.6.RELEASE' apply false
+  id 'org.springframework.boot' version '1.5.16.RELEASE'
 }
 
 allprojects {
 
   apply plugin: 'java'
-
-  version '2.0.0'
+  version '2.0.1'
   group 'com.github.daggerok'
-  sourceCompatibility = JavaVersion.VERSION_1_8
-  targetCompatibility = JavaVersion.VERSION_1_8
-  defaultTasks 'clean', 'build'
-
+  sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
   repositories {
     mavenCentral()
     jcenter()
   }
+  tasks.withType(JavaPlugin) {
+    options.encoding = "UTF-8"
+  }
+  defaultTasks 'clean', 'build'
 
   apply plugin: 'io.franzbecker.gradle-lombok'
   lombok.version = '1.18.2'
 
   apply plugin: 'io.spring.dependency-management'
-
   dependencyManagement {
     imports {
       mavenBom "org.springframework.boot:spring-boot-dependencies:$springBootVersion"
@@ -44,31 +45,79 @@ allprojects {
   }
 
   apply plugin: 'org.springframework.boot'
+}
 
-  dependencies {
-    compile 'org.springframework.boot:spring-boot-starter'
-    runtime 'org.springframework.boot:spring-boot-devtools'
-    testCompile 'org.springframework.boot:spring-boot-starter-test'
-  }
-
-  // gradle bootRun -Dserver.context-path=/app
-  bootRun { systemProperties = System.properties }
-
-  springBoot {
-    executable = true
+subprojects {
+  tasks.withType(org.springframework.boot.gradle.plugin.SpringBootPlugin as Class) {
+    bootRepackage.enabled = false
+    executable = false
   }
 }
 
 dependencies {
-  compile project(':web'), project(':user'), project(':admin'),
-      'org.springframework.boot:spring-boot-starter-websocket'
+  compile 'org.springframework.boot:spring-boot-starter',
+                 'org.springframework.boot:spring-boot-starter-websocket'
+
+
+  compile 'org.springframework.boot:spring-boot-starter-data-jpa',
+                 'org.springframework.boot:spring-boot-starter-data-rest',
+                 'org.springframework.boot:spring-boot-starter-hateoas',
+                 'org.springframework.boot:spring-boot-starter-cache'
+
+  runtime 'com.h2database:h2'
+
+  testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc',
+                     'org.springframework.boot:spring-boot-starter-test'
+  ['web', 'admin']
+      .collect { ":$it" }
+      .each { compile(project(it)) }
 }
 
 wrapper {
-  gradleVersion = '4.10'
-  distributionType = 'BIN'
+  gradleVersion = '4.10.1'
 }
 
-bootRepackage {
-  enabled = false
+apply plugin: 'org.springframework.boot'
+bootRepackage.enabled = true
+springBoot {
+  executable = true
+  mainClass = project.className
+}
+// gradle bootRun -Dserver.context-path=/app
+bootRun {
+  systemProperties = System.properties
+}
+
+['web', 'admin', 'reactor'].each {
+  assemble.dependsOn ":$it:assemble"
+}
+
+// no one cares, that shit doesn't work at all... use bash ./build/libs/*.jar
+apply plugin: 'application'
+mainClassName = project.className
+
+distZip {
+  into(".") {
+    from 'src/main/resources'
+    include '*.properties'
+    into "$project.name-$project.version/"
+  }
+  into(".") {
+    from 'src/main/resources'
+    include '*.properties'
+    into "$project.name-$project.version/bin"
+  }
+  into(".") {
+    from 'src/main/resources'
+    include '*.properties'
+    into "$project.name-$project.version/lib"
+  }
+}
+
+distTar {
+  into('.') {
+    from 'src/main/resources'
+    include '*.properties'
+  }
+  into './bin'
 }

@@ -1,45 +1,42 @@
 # spring-streaming [![Build Status](https://travis-ci.org/daggerok/spring-streaming.svg?branch=master)](https://travis-ci.org/daggerok/spring-streaming)
 
-This example gradle multi-project showing Full-stack app using simplest Spring Boot 1.x + Reactor event-bus, websockets and React frontend apps:
+This example gradle multi-project showing Full-stack app using simplest Spring Boot 1.x (+ some Reactor event-bus app),
+web-sockets and React frontend app
 
-- backend:
-  - spring boot 1.5.15.RELEASE
-  - spring-mvc
-  - spring-security
-  - spring-messaging
-  - spring-data-rest
-  - spring-hateoas
+- spring boot 1.5.16.RELEASE
+- spring-mvc
+- spring-messaging
+- spring-data-rest
+- spring-hateoas
+- spring-security
+- spring devtools (live reload)
+- bootstrap 3
+- babel ES6
+- react + react-router
+- gradle
+- node
+- npm
+- webpack
 
-- frontend
-  - bootstrap
-  - babel ES6
-  - React:
-    - JSX
-    - react-router
+**Please take a note: I wont support that crap anymore... Sometimes Node JS libraries absolutely incompatible
+and non backward compatible during some time... In some past times it worked.**
 
-- build:
-  - gradle
-  - node
-  - npm
-  - webpack
-  - spring-boot-devtools (live reload)
-
-npm is required
-
-**Please take a note: I'm not going to support that crap anymore... JS libraries absolutely incompatible and non backward compatible during some time... Sometimes in a past it worked.**
-
-production mode:
-
+prod mode
 ```shell
-gradle clean build
+# build:
+./gradlew clean build
+
+# run as standalone java app:
 java -jar build/libs/*.jar
+
+# or in unix bash:
+bash build/libs/*.jar
 ```
 
-development mode:
-
+dev mode
 ```shell
 npm start
-gradle bootRun
+./gradlew bootRun
 open http://localhost:8080
 ```
 

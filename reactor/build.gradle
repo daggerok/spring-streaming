@@ -1,7 +1,8 @@
-//project(":reactor") {
-  dependencies {
-    compile "org.springframework.boot:spring-boot-starter-data-rest",
-        "com.fasterxml.jackson.core:jackson-databind",
-        "io.projectreactor:reactor-bus"
-  }
-//}
+dependencies {
+  compile 'org.springframework.boot:spring-boot-starter',
+          'org.springframework.boot:spring-boot-starter-data-rest',
+          'com.fasterxml.jackson.core:jackson-databind',
+          'io.projectreactor:reactor-bus'
+}
+
+bootRepackage.enabled = true

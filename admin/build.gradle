@@ -1,7 +1,8 @@
-//project(":admin") {
-  dependencies {
-    compile "org.springframework.boot:spring-boot-starter-actuator",
-        "org.springframework.boot:spring-boot-starter-hateoas",
-        "com.h2database:h2"
-  }
-//}
+dependencies {
+  compile 'org.springframework.boot:spring-boot-starter',
+          'org.springframework.boot:spring-boot-starter-actuator',
+          'org.springframework.boot:spring-boot-starter-hateoas',
+          'com.h2database:h2'
+}
+
+bootRepackage.enabled = false

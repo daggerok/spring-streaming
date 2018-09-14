@@ -1,5 +1,6 @@
-package com.daggerok.spring.streaming.pingpong;
+package com.daggerok.spring.streaming.reactor.pingpong;
 
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,11 @@ import java.util.stream.IntStream;
 
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class Publisher {
-  @Autowired
-  EventBus eventBus;
 
-  @Autowired
-  CountDownLatch countDownLatch;
+  final EventBus eventBus;
+  final CountDownLatch countDownLatch;
 
   @SneakyThrows
   public void publishModel(int times) {

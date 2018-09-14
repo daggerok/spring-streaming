@@ -24,12 +24,13 @@ public class WebSocketCfg extends AbstractWebSocketMessageBrokerConfigurer {
     registry.addEndpoint("/messaging").withSockJS();
   }
 
-  /*
-      @Override
-      public void configureMessageBroker(MessageBrokerRegistry registry) {
-          registry.enableSimpleBroker().setTaskScheduler(cfg.scheduler());
-      }
-  */
+/*
+  @Override
+  public void configureMessageBroker(MessageBrokerRegistry registry) {
+      registry.enableSimpleBroker().setTaskScheduler(cfg.scheduler());
+  }
+*/
+
   @Override
   public void configureMessageBroker(MessageBrokerRegistry registry) {
     registry.setApplicationDestinationPrefixes("/app")

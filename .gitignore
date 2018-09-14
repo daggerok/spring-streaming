@@ -12,3 +12,4 @@ web/ws/sockjs/
 src/main/resources/public/
 package-lock.json
 yarn.lock
+*.mv.db

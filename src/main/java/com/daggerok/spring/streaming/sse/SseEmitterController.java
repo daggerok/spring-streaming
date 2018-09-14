@@ -8,7 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.io.IOException;
@@ -22,8 +25,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Controller
 @RequestMapping("/test")
 public class SseEmitterController {
-  private final Set<SseEmitter> emitters = new CopyOnWriteArraySet<>();
 
+  private final Set<SseEmitter> emitters = new CopyOnWriteArraySet<>();
   private final TaskScheduler scheduler;
 
   @Autowired
@@ -48,7 +51,7 @@ public class SseEmitterController {
     }, 1000);
   }
 
-  @RequestMapping(path = "/sse-interval", method = RequestMethod.GET)
+  @GetMapping("/sse-interval")
   public SseEmitter handle() {
     return initEmitter();
   }
@@ -63,14 +66,14 @@ public class SseEmitterController {
     return emitter;
   }
 
-  @RequestMapping(path = "/sse-interval-with-status", method = RequestMethod.GET)
+  @GetMapping("/sse-interval-with-status")
   public ResponseEntity<SseEmitter> handleWithResponseEntry(@RequestParam(required = false) String q) {
     return StringUtils.hasText(q) ?
         ResponseEntity.status(HttpStatus.NO_CONTENT).body(null) :
         ResponseEntity.ok().body(initEmitter());
   }
 
-  @RequestMapping(path = "/tic-tac-toe", method = RequestMethod.GET)
+  @GetMapping("/tic-tac-toe")
   public SseEmitter ticTacToe() throws IOException {
     SseEmitter emitter = new SseEmitter();
     new Thread(() -> {
@@ -87,8 +90,8 @@ public class SseEmitterController {
     return emitter;
   }
 
-  @RequestMapping(path = "/tic-tac", method = RequestMethod.GET)
   @ResponseBody
+  @GetMapping("/tic-tac")
   public String ticTac() throws IOException, InterruptedException {
     TimeUnit.MILLISECONDS.sleep(50);
     return "data:{message: 'thanks!'}\n";
