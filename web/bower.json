@@ -7,6 +7,6 @@
     "sockjs": "0.3.4"
   },
   "disabled": {
-    "stomp": "stomp-websocket#~2.3.4"
+    "stomp": "stomp-websocket#2.3.4"
   }
 }

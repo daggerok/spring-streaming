@@ -3,7 +3,7 @@
 This example gradle multi-project showing Full-stack app using simplest Spring Boot 1.x (+ some Reactor event-bus app),
 web-sockets and React frontend app
 
-- spring boot 1.5.16.RELEASE
+- spring boot 1.5.19.RELEASE
 - spring-mvc
 - spring-messaging
 - spring-data-rest
