@@ -64,7 +64,14 @@ npm outdated
 npm update -D # or gradle npm -Ptask=update
 ```
 
-read more:
+## other repos
+* https://github.com/daggerok/spring-websocket-stomp
+* https://github.com/daggerok/spring-boot-rest-jms-activemq
+* https://github.com/daggerok/sockjs-stomp-websocket-react-and-vanilla
+* https://github.com/daggerok/wsock
+* https://github.com/daggerok/spring-security-rest-auth-token
+
+## rtfm
 
 - [spring](https://spring.io)
 - [spring-gradle dependency management plugin](https://github.com/spring-gradle-plugins/dependency-management-plugin)
